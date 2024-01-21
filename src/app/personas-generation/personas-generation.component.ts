@@ -7,13 +7,22 @@ import { Component } from '@angular/core';
 })
 export class PersonasGenerationComponent {
   jsonResponse: string;
+  entryName: string;
+  entrySkillset: string;
 
   constructor() {
     this.jsonResponse = "{ \"Diogo Buarque Franzosi - Data\": { \"Data Scientist\": 0.3457283675670624, \"Data Scientist in Contamination\": 0.3601120114326477,"
       + "\"Data Scientist- Pricing insights\": 0.3513360619544983, \"Senior Data Analyst\": 0.36060917377471924, \"Senior Data scientist with excellent software development skills\": 0.3502436578273773 } }";
+    let jsonResponseObject = JSON.parse(this.jsonResponse);
+    this.entryName = "";
+    this.entrySkillset = "";
   }
 
-  ngOninit() {
-
+  ngOnInit() {
+    console.log("hello world!");
+    let jsonResponseObject = JSON.parse(this.jsonResponse);
+    this.entryName = Object.keys(jsonResponseObject)[0];
+    this.entrySkillset = Object.keys(jsonResponseObject[this.entryName])[2];
+    console.log(this.entrySkillset);
   }
 }
