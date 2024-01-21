@@ -9,7 +9,7 @@ export class NavbarComponent {
   syntedaLogoPath: string;
 
   constructor() {
-    this.syntedaLogoPath = '/assets/images/synteda-logo.png';
+    this.syntedaLogoPath = '/assets/images/synteda-logo.jpeg';
   }
 
 }
