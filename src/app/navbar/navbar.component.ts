@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  syntedaLogoPath: string;
+
+  constructor() {
+    this.syntedaLogoPath = '/usr/src/personas-app/src/assets/images/synteda-logo.png';
+  }
 
 }
