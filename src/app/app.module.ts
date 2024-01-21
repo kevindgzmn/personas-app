@@ -10,16 +10,21 @@ import { RouterOutlet } from '@angular/router';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 import { PersonasGenerationComponent } from './personas-generation/personas-generation.component';
 import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     PersonasGenerationComponent,
-    HomeComponent
+    HomeComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +33,7 @@ import { HomeComponent } from './home/home.component';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
     RouterOutlet
   ],
   providers: [
