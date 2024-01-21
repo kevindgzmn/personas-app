@@ -9,6 +9,8 @@ import { RouterOutlet } from '@angular/router';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 import { PersonasGenerationComponent } from './personas-generation/personas-generation.component';
 import { HomeComponent } from './home/home.component';
 
@@ -25,6 +27,7 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
+    MatIconModule,
     RouterOutlet
   ],
   providers: [
