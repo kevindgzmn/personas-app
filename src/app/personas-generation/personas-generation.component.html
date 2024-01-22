@@ -1,13 +1,21 @@
 <div class="main-div">
     <mat-card class="main-card">
         <mat-card-header>
-            <mat-card-title>{{ this.entryName }}</mat-card-title>
-            <mat-card-subtitle>Applicant</mat-card-subtitle>
+            <mat-card-title>{{ this.candidate }}</mat-card-title>
+            <mat-card-subtitle>{{ this.candidateEmail }}</mat-card-subtitle>
         </mat-card-header>
-        <mat-card-content>
-            <p>
-                {{ this.entrySkillset }}
-            </p>
-        </mat-card-content>
+        <div *ngFor="let skill of this.candidateSkills">
+            <mat-card-content>
+                <p>
+                    Position: {{skill['position']}}
+                    <br>
+                    Score: {{skill['score']}}
+                    <br>
+                    Broker: {{skill['broker']}}
+                    <br>
+                    Webpage: {{skill['webpage']}}
+                </p>
+            </mat-card-content>
+        </div>
     </mat-card>
 </div>

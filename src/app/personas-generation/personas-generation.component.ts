@@ -7,22 +7,24 @@ import { Component } from '@angular/core';
 })
 export class PersonasGenerationComponent {
   jsonResponse: string;
-  entryName: string;
-  entrySkillset: string;
+  candidate: string;
+  candidateEmail: string;
+  candidateSkills: Array<any>;
 
   constructor() {
-    this.jsonResponse = "{ \"Diogo Buarque Franzosi - Data\": { \"Data Scientist\": 0.3457283675670624, \"Data Scientist in Contamination\": 0.3601120114326477,"
-      + "\"Data Scientist- Pricing insights\": 0.3513360619544983, \"Senior Data Analyst\": 0.36060917377471924, \"Senior Data scientist with excellent software development skills\": 0.3502436578273773 } }";
+    this.jsonResponse = "{\"assignments\":[{\"broker\":\"Adecco\",\"position\":\"Re-marketing Lead to Polestar Automotive\",\"score\":0.3872344493865967,\"webpage\":" +
+      "\"https://www.adecco.se/jobb/re-marketing-lead-to-polestar-automotive-forsaljning-marknadsforing/?ID=2c51e926-638f-4d4c-8ea3-a07a4e12c084\"},{\"broker\":\"Adecco\",\"position\":" +
+      "\"Electrical Test Engineer for future assignments\",\"score\":0.39631009101867676,\"webpage\":\"https://www.adecco.se/jobb/electrical-test-engineer-for-future-assignments-ingenjor-teknik/?ID=af7e8342-d33e-40f6-b2fd-37819ad9f435\"}],\"candidate\":{\"cvName\":\"DiogoFranzosi\",\"email\":\"diogo@synteda.com\"}}";
     let jsonResponseObject = JSON.parse(this.jsonResponse);
-    this.entryName = "";
-    this.entrySkillset = "";
+    this.candidate = "";
+    this.candidateEmail = "";
+    this.candidateSkills = [];
   }
 
   ngOnInit() {
-    console.log("hello world!");
     let jsonResponseObject = JSON.parse(this.jsonResponse);
-    this.entryName = Object.keys(jsonResponseObject)[0];
-    this.entrySkillset = Object.keys(jsonResponseObject[this.entryName])[2];
-    console.log(this.entrySkillset);
+    this.candidate = jsonResponseObject['candidate']['cvName'];
+    this.candidateEmail = jsonResponseObject['candidate']['email'];
+    this.candidateSkills = jsonResponseObject['assignments'];
   }
 }
